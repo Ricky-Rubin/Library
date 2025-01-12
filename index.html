@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="nav-area">
+        <div class="logo">
+            <svg class="svg-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g data-name="23-student"><path d="M17 18a7.009 7.009 0 0 0 7-7V7a7 7 0 0 0-14 0v4a7.009 7.009 0 0 0 7 7zm0-16a4.99 4.99 0 0 1 4.95 4.5l-3.579-1.429a1 1 0 0 0-.926.1l-2.632 1.752-2.736-.684A5 5 0 0 1 17 2zm-5 6.28 2.758.69A1 1 0 0 0 15 9a1.007 1.007 0 0 0 .555-.168l2.562-1.708L22 8.677V11a5 5 0 0 1-10 0z"/><path d="M17 15a3 3 0 0 0 3-3h-2a1 1 0 0 1-2 0h-2a3 3 0 0 0 3 3zM6 38h4v2H6zM6 42h8v2H6z"/><path d="M47 22a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H35a1 1 0 0 0-1 1v3h-2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2v2h-1a1 1 0 0 0-1 1v3h-.261l-3.783-12.294a1 1 0 0 0-.509-.6l-4-2v.012a.907.907 0 0 0-1.247.282L17 24.333 11.8 17.4a.907.907 0 0 0-1.242-.283v-.012l-4 2a1 1 0 0 0-.509.6L2.261 32H0v2h2v13a1 1 0 0 0 1 1h42a1 1 0 0 0 1-1V34h2v-2h-2v-2h1a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2v-2zm-11-4h6v2h-6zm7 4v2h-2v-2zm-10 2v-2h6v2h-6zm4 2v2h-1v-2zm-3 4h7v2h-7zm-12-9v2.279l-2.279.76zm1.316 3.948A1 1 0 0 0 24 24v-4.382l2.17 1.082L29.646 32H26v-4h-2v4h-3.341l-2.312-5.395zM18.484 32h-2.968L17 28.539zM12 21l2.279 3.039-2.279-.76zm-4.17-.3L10 19.618V24a1 1 0 0 0 .684.948l4.969 1.657L13.341 32H10v-4H8v4H4.354zM44 46H4V34h40zm0-14h-1v-2h1zm2-6v2h-7v-2h7zm-2-6v-2h2v2z"/></g></svg>
+            <span class="logo-name">myLibrary</span>
+        </div>
+
+        <div class="add-new">
+            <button class="add-book" id="add-book">Add Book</button>
+        </div>
+    </div>
+
+    <div class="main-body">
+        <div class="form">
+            <div class="close-btn">
+                <button class="close">×</button>
+            </div>
+
+            <div class="entry first-entry">
+                <label for="title">Title: </label>
+                <input type="text" id="title">
+            </div>
+
+            <div class="entry">
+                <label for="author">Author: </label>
+                <input type="text" id="author">
+            </div>
+
+            <div class="entry">
+                <label for="pages">Pages: </label>
+                <input type="text" id="pages">
+            </div>
+
+            <div class="entry">
+                <label for="read-status">Have you read it?</label>
+                <input type="text" id="read-status">
+            </div>
+
+            <div class="add-btn">
+                <button id="add-btn">Add To Library</button>
+            </div>
+        </div>
+
+        <div class="main-library" id="main-library"></div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

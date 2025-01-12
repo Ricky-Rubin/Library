@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.svg-logo {
+    width: 75px;
+    height: 75px;
+    fill: white;
+}
+
+.nav-area {
+    height: 100px;
+    background-color: #2f3542;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.logo-name {
+    color: white;
+    font-size: 31px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 18px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.add-new {
+    width: 100px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.add-book {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-image: white;
+    background-color: #4C7C7B;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border-color: white;
+}
+
+.main-body {
+    height: calc(100vh - 100px);
+    background-color: #4C7C7B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    position: fixed;
+    width: 300px;
+    border: 3px solid white;
+    padding: 10px 15px;
+    border-radius: 18px;
+    z-index: 2;
+    background-color: #9E2A2F;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+input {
+    width: calc(100% - 8px);
+    height: 24px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.entry { 
+    margin-bottom: 12px;
+}
+
+.close-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.close {
+    width: 26px;
+    height: 26px;
+    background-color: red;
+    border-radius: 13px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    background: transparent;
+    transition: transform 0.5s ease;
+    border: 2px solid;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+    background-color: red;
+}
+
+.add-btn {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    width: 140px;
+    height: 35px;
+}
+
+#add-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background-image: white;
+    border-color: white;
+    background: transparent;
+}
+
+.main-library {
+    width: 600px;
+    z-index: 1;
+    height: 20px;
+}
