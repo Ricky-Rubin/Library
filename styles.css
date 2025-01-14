@@ -59,6 +59,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: auto;
 }
 
 .form {
@@ -139,7 +140,14 @@ input {
 }
 
 .main-library {
-    width: 600px;
+    width: 670px;
     z-index: 1;
-    height: 20px;
+    margin-top: -100px;
+}
+
+.book-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
 }
