@@ -30,7 +30,7 @@ function displayBook() {
     bookDiv.innerHTML = `<div class='book-details'>${title.value} by ${author.value}, ${pages.value} pages</div>
     <div class='book-btns'>
         <button class='read-stat'>${read.value.toLowerCase() === 'yes' ? 'Read: Yes' : 'Read: No'}</button>
-        <button class='remove-btn'data-title='${title.value}'>Remove</button>
+        <button class='remove-btn' data-title='${title.value}'>Remove</button>
     </div>
     `
     function removeBook() {
@@ -45,7 +45,6 @@ function displayBook() {
         if (bookToRemove !== -1) {
             library.splice(bookToRemove, 1);
         };
-        console.log(library);
     }
 
     const bookDetails = bookDiv.querySelector('.book-details');
@@ -53,7 +52,7 @@ function displayBook() {
     bookDetails.style.fontSize = '17px'
     bookDetails.style.fontWeight = '600'
     bookDiv.style.borderBottom = '2px solid #2f3542';
-    bookDiv.style.marginBottom = '12px'
+    bookDiv.style.marginBottom = '15px'
 
     mainLibrary.appendChild(bookDiv);
     [title, author, pages, read].forEach((input) => input.value = '');

@@ -20,6 +20,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0px 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid red;
 }
 
 .logo-name {
@@ -54,7 +56,8 @@ body {
 }
 
 .main-body {
-    height: calc(100vh - 100px);
+    position: relative;
+    height: calc(100vh - 102px);
     background-color: #4C7C7B;
     display: flex;
     align-items: center;
@@ -142,7 +145,7 @@ input {
 .main-library {
     width: 670px;
     z-index: 1;
-    margin-top: -100px;
+    height: calc(100vh - 150px);
 }
 
 .book-div {
@@ -150,4 +153,19 @@ input {
     align-items: center;
     justify-content: space-between;
     color: white;
+}
+
+.book-btns {
+    padding-right: 10px;
+}
+
+.read-stat,
+.remove-btn {
+    width: 96px;
+    height: 27px;
+    color: #2f3542;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 10px;
+
 }
