@@ -32,7 +32,8 @@ class Mybook {
 
     showBook() {
         form.style.display = 'none'
-        return this.title + ' by ' + this.author + ', ' + this.pages + ' pages. ' + this.read
+        mainLibrary.style.color = 'white'
+        mainLibrary.innerHTML += `<div>${this.title} by ${this.author}, ${this.pages} pages. ${this.read}</div>`
     }
 }
 
@@ -102,5 +103,5 @@ addBookBtn.addEventListener('click', () => {
     addBookToLibrary(title.value, author.value, pages.value, read.value);
     // displayBook();
     let theBook = new Mybook(title.value, author.value, pages.value, read.value);
-    console.log(theBook.showBook());
+    theBook.showBook();
 })
