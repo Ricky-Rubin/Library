@@ -22,71 +22,54 @@ function addBookToLibrary(title, author, pages, read) {
     console.log(library);
 }
 
-class Mybook {
-    constructor(title, author, pages, read) {
-        this.title = title
-        this.author = author 
-        this.pages = pages
-        this.read = read
+function displayBook() {
+    form.style.display = 'none'
+
+    const bookDiv = document.createElement('div');
+    bookDiv.className = 'book-div'
+    bookDiv.innerHTML = `<div class='book-details'>${title.value} by ${author.value}, ${pages.value} pages</div>
+    <div class='book-btns'>
+        <button class='read-stat'>${read.value.toLowerCase() === 'yes' ? 'Read: Yes' : 'Read: No'}</button>
+        <button class='remove-btn' data-title='${title.value}'>Remove</button>
+    </div>
+    `
+    function removeBook() {
+        bookDiv.innerHTML = '';
+        bookDetails.style.padding = '';
+        bookDiv.style.borderBottom = '';
+        bookDiv.style.marginBottom = '';
     }
 
-    showBook() {
-        form.style.display = 'none'
-        mainLibrary.style.color = 'white'
-        mainLibrary.innerHTML += `<div>${this.title} by ${this.author}, ${this.pages} pages. ${this.read}</div>`
+    function removeBookFromLibrary(bookTitle) {
+        const bookToRemove = library.findIndex((book) => book.title === bookTitle);
+        if (bookToRemove !== -1) {
+            library.splice(bookToRemove, 1);
+        };
     }
+
+    const bookDetails = bookDiv.querySelector('.book-details');
+    bookDetails.style.padding = '10px';
+    bookDetails.style.fontSize = '17px'
+    bookDetails.style.fontWeight = '600'
+    bookDiv.style.borderBottom = '2px solid #2f3542';
+    bookDiv.style.marginBottom = '15px'
+
+    mainLibrary.appendChild(bookDiv);
+    [title, author, pages, read].forEach((input) => input.value = '');
+
+    const readStat = bookDiv.querySelector('.read-stat');
+    readStat.addEventListener('click', () => {
+        readStat.textContent = readStat.textContent === 'Read: Yes' ? 'Read: No' : 'Read: Yes';
+    });
+
+    const removeBtn = bookDiv.querySelector('.remove-btn');
+    removeBtn.addEventListener('click', () => {
+        const bookTitle = removeBtn.getAttribute('data-title');
+        removeBookFromLibrary(bookTitle);
+        removeBook();
+    })
+
 }
-
-
-
-// function displayBook() {
-//     form.style.display = 'none'
-
-//     const bookDiv = document.createElement('div');
-//     bookDiv.className = 'book-div'
-//     bookDiv.innerHTML = `<div class='book-details'>${title.value} by ${author.value}, ${pages.value} pages</div>
-//     <div class='book-btns'>
-//         <button class='read-stat'>${read.value.toLowerCase() === 'yes' ? 'Read: Yes' : 'Read: No'}</button>
-//         <button class='remove-btn' data-title='${title.value}'>Remove</button>
-//     </div>
-//     `
-//     function removeBook() {
-//         bookDiv.innerHTML = '';
-//         bookDetails.style.padding = '';
-//         bookDiv.style.borderBottom = '';
-//         bookDiv.style.marginBottom = '';
-//     }
-
-//     function removeBookFromLibrary(bookTitle) {
-//         const bookToRemove = library.findIndex((book) => book.title === bookTitle);
-//         if (bookToRemove !== -1) {
-//             library.splice(bookToRemove, 1);
-//         };
-//     }
-
-//     const bookDetails = bookDiv.querySelector('.book-details');
-//     bookDetails.style.padding = '10px';
-//     bookDetails.style.fontSize = '17px'
-//     bookDetails.style.fontWeight = '600'
-//     bookDiv.style.borderBottom = '2px solid #2f3542';
-//     bookDiv.style.marginBottom = '15px'
-
-//     mainLibrary.appendChild(bookDiv);
-//     [title, author, pages, read].forEach((input) => input.value = '');
-
-//     const readStat = bookDiv.querySelector('.read-stat');
-//     readStat.addEventListener('click', () => {
-//         readStat.textContent = readStat.textContent === 'Read: Yes' ? 'Read: No' : 'Read: Yes';
-//     });
-
-//     const removeBtn = bookDiv.querySelector('.remove-btn');
-//     removeBtn.addEventListener('click', () => {
-//         const bookTitle = removeBtn.getAttribute('data-title');
-//         removeBookFromLibrary(bookTitle);
-//         removeBook();
-//     })
-
-// }
 
 function showForm() {
     form.style.display = 'block';
@@ -101,7 +84,5 @@ closeForm.addEventListener('click', cancelForm);
 
 addBookBtn.addEventListener('click', () => {
     addBookToLibrary(title.value, author.value, pages.value, read.value);
-    // displayBook();
-    let theBook = new Mybook(title.value, author.value, pages.value, read.value);
-    theBook.showBook();
+    displayBook();
 })
